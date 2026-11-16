@@ -28,3 +28,6 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+- App data lives in browser localStorage via src/lib/store.ts (no accounts yet) — simplest start; move to Cloud if sync is needed.
+- AI assistant runs in a server function that scrubs personal data before calling the gateway — privacy requirement.
