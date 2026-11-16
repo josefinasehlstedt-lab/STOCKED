@@ -10,7 +10,7 @@ const places: { v: Place; label: string; Icon: typeof Package }[] = [
   { v: "skafferi", label: "Skafferi", Icon: Package },
 ];
 
-export function ItemForm({ initial }: { initial?: { name?: string; brand?: string; barcode?: string; image?: string } }) {
+export function ItemForm({ initial }: { initial?: { name?: string | undefined; brand?: string | undefined; barcode?: string | undefined; image?: string | undefined } }) {
   const nav = useNavigate();
   const id = useId();
   const [name, setName] = useState(initial?.name ?? "");

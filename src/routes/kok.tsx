@@ -4,9 +4,9 @@ import { toast } from "sonner";
 import { AppShell, Chip } from "@/components/AppShell";
 import { daysLeft, expiryLabel, placeLabel, setState, useStore, type Place, uid } from "@/lib/store";
 
-type Search = { plats?: Place };
+type Search = { plats?: Place | undefined };
 export const Route = createFileRoute("/kok")({
-  validateSearch: (s: Record<string, unknown>): Search => ({ plats: ["kyl", "frys", "skafferi"].includes(s.plats as string) ? (s.plats as Place) : undefined }),
+  validateSearch: (s: Record<string, unknown>): Search => ({ plats: ["kyl", "frys", "skafferi"].includes(s["plats"] as string) ? (s["plats"] as Place) : undefined }),
   head: () => ({ meta: [{ title: "Mitt kök – STOCKED" }, { name: "description", content: "Se dina varor och vad som snart går ut." }, { property: "og:title", content: "Mitt kök – STOCKED" }, { property: "og:description", content: "Se dina varor och vad som snart går ut." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary" }] }),
   component: Kok,
 });

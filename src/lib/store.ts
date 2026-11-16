@@ -1,7 +1,7 @@
 import { useSyncExternalStore } from "react";
 
 export type Place = "kyl" | "frys" | "skafferi";
-export type Item = { id: string; name: string; brand?: string; place: Place; qty: number; expires: string; barcode?: string };
+export type Item = { id: string; name: string; brand?: string | undefined; place: Place; qty: number; expires: string; barcode?: string | undefined };
 export type ShopItem = { id: string; name: string; status: "buy" | "bought" };
 export type State = { onboarded: boolean; name: string; items: Item[]; shop: ShopItem[]; notified: string[] };
 

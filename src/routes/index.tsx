@@ -34,8 +34,8 @@ function Welcome() {
       <img src={hero} alt="Färska råvaror på ett träbord" width={1024} height={768} className="aspect-[4/3] w-full object-cover" />
       {step === "intro" ? (
         <section className="flex flex-1 flex-col items-center px-8 pb-10 pt-10 text-center" aria-roledescription="introduktion">
-          <h1 className="text-2xl font-bold" aria-live="polite">{slides[i].h}</h1>
-          <p className="mt-3 text-base text-muted-foreground">{slides[i].p}</p>
+          <h1 className="text-2xl font-bold" aria-live="polite">{slides[i]!.h}</h1>
+          <p className="mt-3 text-base text-muted-foreground">{slides[i]!.p}</p>
           <div className="mt-8 flex gap-1" role="tablist" aria-label="Introduktionssteg">
             {slides.map((_, n) => (
               <button key={n} role="tab" aria-selected={n === i} aria-label={`Steg ${n + 1} av 3`} onClick={() => setI(n)} className="grid size-8 place-items-center">
