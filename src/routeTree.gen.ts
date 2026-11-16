@@ -10,33 +10,141 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AssistentRouteImport } from './routes/assistent'
+import { Route as HemRouteImport } from './routes/hem'
+import { Route as InkopslistaRouteImport } from './routes/inkopslista'
+import { Route as KokRouteImport } from './routes/kok'
+import { Route as LaggTillRouteImport } from './routes/lagg-till'
+import { Route as ScannaRouteImport } from './routes/scanna'
+import { Route as ReceptIndexRouteImport } from './routes/recept.index'
+import { Route as ReceptIdRouteImport } from './routes/recept.$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AssistentRoute = AssistentRouteImport.update({
+  id: '/assistent',
+  path: '/assistent',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HemRoute = HemRouteImport.update({
+  id: '/hem',
+  path: '/hem',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InkopslistaRoute = InkopslistaRouteImport.update({
+  id: '/inkopslista',
+  path: '/inkopslista',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KokRoute = KokRouteImport.update({
+  id: '/kok',
+  path: '/kok',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LaggTillRoute = LaggTillRouteImport.update({
+  id: '/lagg-till',
+  path: '/lagg-till',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ScannaRoute = ScannaRouteImport.update({
+  id: '/scanna',
+  path: '/scanna',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReceptIndexRoute = ReceptIndexRouteImport.update({
+  id: '/recept/',
+  path: '/recept/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReceptIdRoute = ReceptIdRouteImport.update({
+  id: '/recept/$id',
+  path: '/recept/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/assistent': typeof AssistentRoute
+  '/hem': typeof HemRoute
+  '/inkopslista': typeof InkopslistaRoute
+  '/kok': typeof KokRoute
+  '/lagg-till': typeof LaggTillRoute
+  '/scanna': typeof ScannaRoute
+  '/recept/$id': typeof ReceptIdRoute
+  '/recept/': typeof ReceptIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/assistent': typeof AssistentRoute
+  '/hem': typeof HemRoute
+  '/inkopslista': typeof InkopslistaRoute
+  '/kok': typeof KokRoute
+  '/lagg-till': typeof LaggTillRoute
+  '/scanna': typeof ScannaRoute
+  '/recept/$id': typeof ReceptIdRoute
+  '/recept': typeof ReceptIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/assistent': typeof AssistentRoute
+  '/hem': typeof HemRoute
+  '/inkopslista': typeof InkopslistaRoute
+  '/kok': typeof KokRoute
+  '/lagg-till': typeof LaggTillRoute
+  '/scanna': typeof ScannaRoute
+  '/recept/$id': typeof ReceptIdRoute
+  '/recept/': typeof ReceptIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/assistent'
+    | '/hem'
+    | '/inkopslista'
+    | '/kok'
+    | '/lagg-till'
+    | '/scanna'
+    | '/recept/$id'
+    | '/recept/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/assistent'
+    | '/hem'
+    | '/inkopslista'
+    | '/kok'
+    | '/lagg-till'
+    | '/scanna'
+    | '/recept/$id'
+    | '/recept'
+  id:
+    | '__root__'
+    | '/'
+    | '/assistent'
+    | '/hem'
+    | '/inkopslista'
+    | '/kok'
+    | '/lagg-till'
+    | '/scanna'
+    | '/recept/$id'
+    | '/recept/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AssistentRoute: typeof AssistentRoute
+  HemRoute: typeof HemRoute
+  InkopslistaRoute: typeof InkopslistaRoute
+  KokRoute: typeof KokRoute
+  LaggTillRoute: typeof LaggTillRoute
+  ScannaRoute: typeof ScannaRoute
+  ReceptIdRoute: typeof ReceptIdRoute
+  ReceptIndexRoute: typeof ReceptIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +156,75 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/assistent': {
+      id: '/assistent'
+      path: '/assistent'
+      fullPath: '/assistent'
+      preLoaderRoute: typeof AssistentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hem': {
+      id: '/hem'
+      path: '/hem'
+      fullPath: '/hem'
+      preLoaderRoute: typeof HemRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/inkopslista': {
+      id: '/inkopslista'
+      path: '/inkopslista'
+      fullPath: '/inkopslista'
+      preLoaderRoute: typeof InkopslistaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kok': {
+      id: '/kok'
+      path: '/kok'
+      fullPath: '/kok'
+      preLoaderRoute: typeof KokRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lagg-till': {
+      id: '/lagg-till'
+      path: '/lagg-till'
+      fullPath: '/lagg-till'
+      preLoaderRoute: typeof LaggTillRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/scanna': {
+      id: '/scanna'
+      path: '/scanna'
+      fullPath: '/scanna'
+      preLoaderRoute: typeof ScannaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/recept/': {
+      id: '/recept/'
+      path: '/recept'
+      fullPath: '/recept/'
+      preLoaderRoute: typeof ReceptIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/recept/$id': {
+      id: '/recept/$id'
+      path: '/recept/$id'
+      fullPath: '/recept/$id'
+      preLoaderRoute: typeof ReceptIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AssistentRoute: AssistentRoute,
+  HemRoute: HemRoute,
+  InkopslistaRoute: InkopslistaRoute,
+  KokRoute: KokRoute,
+  LaggTillRoute: LaggTillRoute,
+  ScannaRoute: ScannaRoute,
+  ReceptIdRoute: ReceptIdRoute,
+  ReceptIndexRoute: ReceptIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
