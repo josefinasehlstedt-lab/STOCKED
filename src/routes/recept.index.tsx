@@ -26,7 +26,7 @@ function Recept() {
       <div className="relative"><Search className="absolute left-4 top-1/2 size-5 -translate-y-1/2 text-muted-foreground" aria-hidden />
         <input id="q" type="search" placeholder="Sök recept" value={q} onChange={(e) => setQ(e.target.value)} className="h-12 w-full rounded-full border border-input bg-card pl-12 pr-4 placeholder:text-muted-foreground" /></div>
       <div role="group" aria-label="Kategorier" className="-mx-5 my-5 flex gap-2 overflow-x-auto px-5">
-        {categories.map((c) => { const I = icons[c]; return (
+        {categories.map((c) => { const I = icons[c] ?? UtensilsCrossed; return (
           <button key={c} onClick={() => setCat(c)} aria-pressed={cat === c} className={`flex min-h-11 shrink-0 items-center gap-2 rounded-full px-4 text-sm font-semibold ${cat === c ? "bg-primary text-primary-foreground" : "bg-secondary text-secondary-foreground"}`}><I className="size-4" aria-hidden />{c}</button>
         ); })}
       </div>
