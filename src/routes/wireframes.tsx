@@ -153,21 +153,10 @@ function WIntro() {
   );
 }
 
-function WName() {
-  return (
-    <div className="flex h-full flex-col">
-      <h3 className="font-serif text-2xl font-semibold text-foreground">Vad ska vi kalla dig?</h3>
-      <div className="mt-5"><Field label="Förnamn" /></div>
-      <p className="mt-3 text-[10px] text-muted-foreground">Sparas bara på din enhet. Vi ber även om lov att skicka påminnelser.</p>
-      <span className="mt-auto"><Btn>Starta</Btn></span>
-    </div>
-  );
-}
-
 function WHem() {
   return (
     <div className="flex h-full flex-col">
-      <h3 className="text-lg font-bold leading-tight text-foreground">Hej Josefin,<br /><span className="text-[13px] font-medium text-muted-foreground">här är din översikt</span></h3>
+      <h3 className="text-lg font-bold leading-tight text-foreground">Hej,<br /><span className="text-[13px] font-medium text-muted-foreground">här är din översikt</span></h3>
       <Card className="mt-3 flex items-center gap-3">
         <span aria-hidden className="size-5 rounded-full bg-muted-foreground/30" />
         <span className="flex-1"><Line w="w-20" h="h-2.5" tone="dark" /><Line w="w-32" h="h-2" tone="soft" /></span>
@@ -382,7 +371,6 @@ function WAssistent() {
 
 const screens = [
   { title: "Välkomstguide", path: "/", el: <WIntro /> },
-  { title: "Välkomstguide – namn", path: "/ (steg 2)", el: <WName /> },
   { title: "Hem", path: "/hem", active: "hem", el: <WHem /> },
   { title: "Mitt kök", path: "/kok", active: "kok", el: <WKok /> },
   { title: "Scanna vara – steg 1", path: "/scanna", el: <WScanna /> },
