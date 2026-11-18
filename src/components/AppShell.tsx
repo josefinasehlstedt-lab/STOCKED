@@ -3,6 +3,7 @@ import { ArrowLeft, Home, Refrigerator, ScanLine, ChefHat, ListChecks, MessageCi
 import { useEffect, type ReactNode } from "react";
 import { toast } from "sonner";
 import { daysLeft, setState, useStore } from "@/lib/store";
+import logo from "@/assets/stocked-logo.png";
 
 export function AppShell({ title, back, children }: { title?: string; back?: boolean; children: ReactNode }) {
   const router = useRouter();
@@ -29,7 +30,7 @@ export function AppShell({ title, back, children }: { title?: string; back?: boo
             <ArrowLeft className="size-5" aria-hidden />
           </button>
         )}
-        <Link to="/hem" className="text-sm font-bold tracking-[0.25em] text-foreground">STOCKED</Link>
+        <Link to="/hem" aria-label="STOCKED – till startsidan"><img src={logo} alt="" width={1152} height={576} className="h-6 w-auto" /></Link>
         <Link to="/assistent" aria-label="Fråga matassistenten" className="ml-auto grid size-11 place-items-center rounded-full text-primary hover:bg-muted">
           <MessageCircleQuestion className="size-5" aria-hidden />
         </Link>

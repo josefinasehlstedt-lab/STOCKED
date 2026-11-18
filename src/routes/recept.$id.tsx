@@ -23,7 +23,8 @@ function Detail() {
   };
   return (
     <AppShell title={r.title} back>
-      <p className="-mt-4 mb-6 flex items-center gap-2 text-sm text-muted-foreground"><Clock className="size-4" aria-hidden />{r.time} · {r.category}</p>
+      <img src={r.image} alt={`Tillagad ${r.title}`} width={1024} height={768} className="-mx-5 -mt-4 mb-4 aspect-[4/3] w-[calc(100%+2.5rem)] max-w-none object-cover" />
+      <p className="mb-6 flex items-center gap-2 text-sm text-muted-foreground"><Clock className="size-4" aria-hidden />{r.time} · {r.category}</p>
       <section aria-labelledby="h"><h2 id="h" className="mb-3 font-semibold">Du har hemma</h2>
         <ul className="mb-6 space-y-2">{have.map((i) => <li key={i} className="flex items-center gap-3 rounded-xl bg-secondary px-4 py-3 text-secondary-foreground"><Check className="size-4" aria-hidden />{i}</li>)}{!have.length && <li className="text-muted-foreground">Inget ännu.</li>}</ul></section>
       <section aria-labelledby="m"><h2 id="m" className="mb-3 font-semibold">Saknas</h2>

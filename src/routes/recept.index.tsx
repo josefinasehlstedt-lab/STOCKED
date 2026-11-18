@@ -32,7 +32,8 @@ function Recept() {
       </div>
       <ul className="space-y-3" aria-live="polite">
         {list.map(({ r, have }) => (
-          <li key={r.id}><Link to="/recept/$id" params={{ id: r.id }} className="flex items-center gap-4 rounded-2xl bg-card p-5 shadow-sm">
+          <li key={r.id}><Link to="/recept/$id" params={{ id: r.id }} className="flex items-center gap-4 rounded-2xl bg-card p-3 shadow-sm">
+            <img src={r.image} alt="" width={1024} height={768} loading="lazy" className="size-20 shrink-0 rounded-xl object-cover" />
             <div className="flex-1"><p className="font-serif text-xl font-semibold">{r.title}</p>
               <p className="mt-2 flex flex-wrap items-center gap-2 text-sm text-muted-foreground"><Chip>{have}/{r.ingredients.length} hemma</Chip><Clock className="size-4" aria-hidden />{r.time}</p></div>
             <ChevronRight className="size-5" aria-hidden /></Link></li>
