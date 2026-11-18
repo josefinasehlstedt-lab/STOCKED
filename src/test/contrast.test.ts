@@ -27,13 +27,14 @@ function srgb(L: number, C: number, hDeg: number) {
 }
 
 function luminance(rgb: number[]) {
-  const [r, g, b] = rgb.map((c) => (c <= 0.04045 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4));
-  return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+  const lin = rgb.map((c) => (c <= 0.04045 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4));
+  return 0.2126 * (lin[0] ?? 0) + 0.7152 * (lin[1] ?? 0) + 0.0722 * (lin[2] ?? 0);
 }
 
 function ratio(c1: number[], c2: number[]) {
-  const [hi, lo] = [luminance(c1), luminance(c2)].sort((x, y) => y - x);
-  return (hi + 0.05) / (lo + 0.05);
+  const a = luminance(c1);
+  const b = luminance(c2);
+  return (Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05);
 }
 
 describe("kontrast i formulärkanter (WCAG 1.4.11)", () => {
