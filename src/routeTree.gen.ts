@@ -16,6 +16,7 @@ import { Route as InkopslistaRouteImport } from './routes/inkopslista'
 import { Route as KokRouteImport } from './routes/kok'
 import { Route as LaggTillRouteImport } from './routes/lagg-till'
 import { Route as ScannaRouteImport } from './routes/scanna'
+import { Route as WireframesRouteImport } from './routes/wireframes'
 import { Route as ReceptIndexRouteImport } from './routes/recept.index'
 import { Route as ReceptIdRouteImport } from './routes/recept.$id'
 
@@ -54,6 +55,11 @@ const ScannaRoute = ScannaRouteImport.update({
   path: '/scanna',
   getParentRoute: () => rootRouteImport,
 } as any)
+const WireframesRoute = WireframesRouteImport.update({
+  id: '/wireframes',
+  path: '/wireframes',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ReceptIndexRoute = ReceptIndexRouteImport.update({
   id: '/recept/',
   path: '/recept/',
@@ -73,6 +79,7 @@ export interface FileRoutesByFullPath {
   '/kok': typeof KokRoute
   '/lagg-till': typeof LaggTillRoute
   '/scanna': typeof ScannaRoute
+  '/wireframes': typeof WireframesRoute
   '/recept/$id': typeof ReceptIdRoute
   '/recept/': typeof ReceptIndexRoute
 }
@@ -84,6 +91,7 @@ export interface FileRoutesByTo {
   '/kok': typeof KokRoute
   '/lagg-till': typeof LaggTillRoute
   '/scanna': typeof ScannaRoute
+  '/wireframes': typeof WireframesRoute
   '/recept/$id': typeof ReceptIdRoute
   '/recept': typeof ReceptIndexRoute
 }
@@ -96,6 +104,7 @@ export interface FileRoutesById {
   '/kok': typeof KokRoute
   '/lagg-till': typeof LaggTillRoute
   '/scanna': typeof ScannaRoute
+  '/wireframes': typeof WireframesRoute
   '/recept/$id': typeof ReceptIdRoute
   '/recept/': typeof ReceptIndexRoute
 }
@@ -109,6 +118,7 @@ export interface FileRouteTypes {
     | '/kok'
     | '/lagg-till'
     | '/scanna'
+    | '/wireframes'
     | '/recept/$id'
     | '/recept/'
   fileRoutesByTo: FileRoutesByTo
@@ -120,6 +130,7 @@ export interface FileRouteTypes {
     | '/kok'
     | '/lagg-till'
     | '/scanna'
+    | '/wireframes'
     | '/recept/$id'
     | '/recept'
   id:
@@ -131,6 +142,7 @@ export interface FileRouteTypes {
     | '/kok'
     | '/lagg-till'
     | '/scanna'
+    | '/wireframes'
     | '/recept/$id'
     | '/recept/'
   fileRoutesById: FileRoutesById
@@ -143,6 +155,7 @@ export interface RootRouteChildren {
   KokRoute: typeof KokRoute
   LaggTillRoute: typeof LaggTillRoute
   ScannaRoute: typeof ScannaRoute
+  WireframesRoute: typeof WireframesRoute
   ReceptIdRoute: typeof ReceptIdRoute
   ReceptIndexRoute: typeof ReceptIndexRoute
 }
@@ -198,6 +211,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ScannaRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/wireframes': {
+      id: '/wireframes'
+      path: '/wireframes'
+      fullPath: '/wireframes'
+      preLoaderRoute: typeof WireframesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/recept/': {
       id: '/recept/'
       path: '/recept'
@@ -223,6 +243,7 @@ const rootRouteChildren: RootRouteChildren = {
   KokRoute: KokRoute,
   LaggTillRoute: LaggTillRoute,
   ScannaRoute: ScannaRoute,
+  WireframesRoute: WireframesRoute,
   ReceptIdRoute: ReceptIdRoute,
   ReceptIndexRoute: ReceptIndexRoute,
 }
