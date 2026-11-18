@@ -1,9 +1,8 @@
 # Roadmap
 
-- [x] Generera 4 receptbilder + STOCKED-logga
-- [x] Koppla receptbilder till receptlistan och receptdetaljen
-- [x] Använd loggan i sidhuvudet (AppShell)
-- [x] Sätt favicon från loggan, ta bort gamla favicon.ico
-- [x] Verifiera bygge och commita
+## Öppen
+- [ ] Notisen "Mjölk går ut imorgon" lägger sig ovanpå sidhuvudet och döljer loggan och ikonerna – flytta ner den (väntar på Josefs godkännande)
 
-- [x] Mörkare kantfärg på formulärfält så kanterna når 3:1 (WCAG 1.4.11) + kontrasttest
+## Klar
+- [x] Wireframes-sida med alla 10 skärmar i gråskiss (/wireframes)
+- [x] STOCKED-loggan större i sidhuvudet (24 px → 36 px höjd)

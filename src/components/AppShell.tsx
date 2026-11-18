@@ -30,7 +30,7 @@ export function AppShell({ title, back, children }: { title?: string; back?: boo
             <ArrowLeft className="size-5" aria-hidden />
           </button>
         )}
-        <Link to="/hem" aria-label="STOCKED – till startsidan"><img src={logo} alt="" width={1152} height={576} className="h-6 w-auto" /></Link>
+        <Link to="/hem" aria-label="STOCKED – till startsidan"><img src={logo} alt="" width={786} height={99} className="h-6 w-auto" /></Link>
         <Link to="/assistent" aria-label="Fråga matassistenten" className="ml-auto grid size-11 place-items-center rounded-full text-primary hover:bg-muted">
           <MessageCircleQuestion className="size-5" aria-hidden />
         </Link>
