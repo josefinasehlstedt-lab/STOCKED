@@ -7,7 +7,7 @@ import { daysLeft, expiryLabel, placeLabel, setState, useStore, type Place, uid 
 type Search = { plats?: Place | undefined };
 export const Route = createFileRoute("/kok")({
   validateSearch: (s: Record<string, unknown>): Search => ({ plats: ["kyl", "frys", "skafferi"].includes(s["plats"] as string) ? (s["plats"] as Place) : undefined }),
-  head: () => ({ meta: [{ title: "Mitt kök – STOCKED" }, { name: "description", content: "Se dina varor och vad som snart går ut." }, { property: "og:title", content: "Mitt kök – STOCKED" }, { property: "og:description", content: "Se dina varor och vad som snart går ut." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary" }] }),
+  head: () => ({ meta: [{ title: "Mitt kök – STOCKED" }, { name: "description", content: "Se mina varor och vad som snart går ut." }, { property: "og:title", content: "Mitt kök – STOCKED" }, { property: "og:description", content: "Se mina varor och vad som snart går ut." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary" }] }),
   component: Kok,
 });
 
@@ -25,7 +25,7 @@ function Kok() {
 
   function remove(id: string, used: boolean) {
     const it = s.items.find((i) => i.id === id)!;
-    setState((st) => ({ ...st, items: st.items.filter((i) => i.id !== id), shop: used ? [...st.shop, { id: uid(), name: it.name, status: "bought" }] : st.shop }));
+    setState((st) => ({ ...st, items: st.items.filter((i) => i.id !== id), shop: used ? [...st.shop, { id: uid(), name: it.name }] : st.shop }));
     toast(used ? `${it.name} markerad som använd` : `${it.name} borttagen`);
   }
   const Row = ({ i }: { i: (typeof list)[number] }) => {

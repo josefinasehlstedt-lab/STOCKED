@@ -2,7 +2,7 @@ import { useSyncExternalStore } from "react";
 
 export type Place = "kyl" | "frys" | "skafferi";
 export type Item = { id: string; name: string; brand?: string | undefined; place: Place; qty: number; expires: string; barcode?: string | undefined };
-export type ShopItem = { id: string; name: string; status: "buy" | "bought" };
+export type ShopItem = { id: string; name: string };
 export type State = { onboarded: boolean; items: Item[]; shop: ShopItem[]; notified: string[] };
 
 const KEY = "stocked-v1";
@@ -22,8 +22,8 @@ const seed: State = {
     { id: "9", name: "Vitlök", place: "skafferi", qty: 1, expires: today(14) },
   ],
   shop: [
-    { id: "s1", name: "Bröd", status: "buy" },
-    { id: "s2", name: "Kaffe", status: "bought" },
+    { id: "s1", name: "Bröd" },
+    { id: "s2", name: "Kaffe" },
   ],
 };
 
