@@ -15,7 +15,7 @@ export function AppShell({ title, back, children }: { title?: string; back?: boo
     if (!due.length) return;
     due.forEach((i) => {
       const msg = `${i.name} går ut imorgon`;
-      toast(msg, { description: "Använd den gärna idag eller imorgon." });
+      toast(msg, { description: "Jag använder den gärna idag eller imorgon." });
       if (typeof Notification !== "undefined" && Notification.permission === "granted") new Notification("STOCKED", { body: msg });
     });
     setState((st) => ({ ...st, notified: [...st.notified, ...due.map((d) => d.id)] }));

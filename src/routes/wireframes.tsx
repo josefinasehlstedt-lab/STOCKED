@@ -141,7 +141,7 @@ function WIntro() {
     <div className="flex h-full flex-col">
       <ImgBox className="h-28 w-full rounded-2xl" />
       <h3 className="mt-4 text-center text-base font-bold text-foreground">Välkommen till STOCKED</h3>
-      <p className="mt-2 text-center text-[11px] text-muted-foreground">Håll koll på allt i kyl, frys och skafferi – på ett ställe.</p>
+      <p className="mt-2 text-center text-[11px] text-muted-foreground">Jag har koll på allt i kyl, frys och skafferi – på ett ställe.</p>
       <span aria-hidden className="mt-4 flex justify-center gap-1">
         <span className="size-1.5 rounded-full bg-foreground" />
         <span className="size-1.5 rounded-full bg-muted-foreground/30" />
@@ -156,13 +156,13 @@ function WIntro() {
 function WHem() {
   return (
     <div className="flex h-full flex-col">
-      <h3 className="text-lg font-bold leading-tight text-foreground">Hej,<br /><span className="text-[13px] font-medium text-muted-foreground">här är din översikt</span></h3>
+      <h3 className="text-lg font-bold leading-tight text-foreground">Min översikt</h3>
       <Card className="mt-3 flex items-center gap-3">
         <span aria-hidden className="size-5 rounded-full bg-muted-foreground/30" />
         <span className="flex-1"><Line w="w-20" h="h-2.5" tone="dark" /><Line w="w-32" h="h-2" tone="soft" /></span>
         <ChevronRight className="size-4 shrink-0 text-muted-foreground/60" aria-hidden />
       </Card>
-      <SectionTitle>Dina förråd</SectionTitle>
+      <SectionTitle>Mina förråd</SectionTitle>
       {["Kyl", "Frys", "Skafferi"].map((p) => (
         <Card key={p} className="mb-2 flex items-center gap-3">
           <span aria-hidden className="grid size-7 place-items-center rounded-full bg-foreground/80 text-background text-[9px] font-bold">{p[0]}</span>
@@ -286,7 +286,7 @@ function WReceptDetail() {
       <ImgBox className="h-28 w-full rounded-xl" label="bild" />
       <h3 className="mt-2 font-serif text-xl font-semibold text-foreground">Pasta med tomat</h3>
       <p className="mt-1 text-[10px] text-muted-foreground">25 min · Vardag</p>
-      <SectionTitle>Du har hemma</SectionTitle>
+      <SectionTitle>Jag har hemma</SectionTitle>
       {[0, 1].map((n) => (
         <Card key={n} className={`mb-1.5 ${SOFT} flex items-center gap-2 py-1.5`}>
           <span aria-hidden className="size-3 rounded-full border border-muted-foreground/50" />
@@ -323,13 +323,6 @@ function WInkop() {
           <span aria-hidden className="size-3.5 rounded border border-input" />
           <Line w="w-24" h="h-2" tone="mid" />
           <span aria-hidden className="ml-auto size-5 rounded-full border border-border" />
-        </Card>
-      ))}
-      <SectionTitle>Köpt</SectionTitle>
-      {[0].map((n) => (
-        <Card key={n} className={`mb-1.5 flex items-center gap-2 py-1.5 ${SOFT}`}>
-          <span aria-hidden className="flex-1"><Line w="w-20" h="h-2" tone="soft" /></span>
-          <span aria-hidden className="size-5 rounded-full border border-border" />
         </Card>
       ))}
       <SectionTitle>Handla igen</SectionTitle>

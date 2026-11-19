@@ -33,12 +33,12 @@ function Assistant() {
       <div role="log" aria-live="polite" className="space-y-4">
         {!msgs.length && <div className="flex flex-wrap gap-2">{tips.map((t) => <button key={t} onClick={() => send(t)} className="min-h-11 rounded-full border border-border bg-card px-4 text-left text-sm font-medium">{t}</button>)}</div>}
         {msgs.map((m, i) => m.role === "user"
-          ? <p key={i} className="ml-auto max-w-[85%] rounded-2xl rounded-br-md bg-primary px-4 py-3 text-primary-foreground"><span className="sr-only">Du: </span>{m.content}</p>
+          ? <p key={i} className="ml-auto max-w-[85%] rounded-2xl rounded-br-md bg-primary px-4 py-3 text-primary-foreground"><span className="sr-only">Jag: </span>{m.content}</p>
           : <div key={i} className="flex gap-3"><span aria-hidden className="grid size-8 shrink-0 place-items-center rounded-full bg-secondary text-secondary-foreground"><Leaf className="size-4" /></span><div className="prose prose-sm max-w-none pt-1 text-foreground [&_p]:my-2"><span className="sr-only">Assistent: </span><ReactMarkdown>{m.content}</ReactMarkdown></div></div>)}
         {busy && <p className="text-sm text-muted-foreground">Assistenten skriver…</p>}
       </div>
       <form onSubmit={(e) => { e.preventDefault(); send(text); }} className="fixed inset-x-0 bottom-20 z-20 mx-auto flex max-w-md gap-2 bg-background px-5 py-3">
-        <label htmlFor="fraga" className="sr-only">Din fråga</label>
+        <label htmlFor="fraga" className="sr-only">Min fråga</label>
         <textarea id="fraga" ref={ta} rows={1} value={text} maxLength={2000} onChange={(e) => setText(e.target.value)} onKeyDown={(e) => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); send(text); } }} placeholder="Ställ en fråga…" className="min-h-12 flex-1 resize-none rounded-2xl border border-input bg-card px-4 py-3 placeholder:text-muted-foreground" />
         <button disabled={busy} aria-label="Skicka" className="grid size-12 place-items-center rounded-full bg-primary text-primary-foreground disabled:opacity-60"><Send className="size-5" aria-hidden /></button>
       </form>

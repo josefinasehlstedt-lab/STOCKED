@@ -4,14 +4,14 @@ import hero from "@/assets/hero-groceries.jpg";
 import { setState, useStore } from "@/lib/store";
 
 export const Route = createFileRoute("/")({
-  head: () => ({ meta: [{ title: "Välkommen – STOCKED" }, { name: "description", content: "STOCKED hjälper dig hålla koll på matvaror, bäst före-datum och inköp." }, { property: "og:title", content: "Välkommen – STOCKED" }, { property: "og:description", content: "STOCKED hjälper dig hålla koll på matvaror, bäst före-datum och inköp." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary" }] }),
+  head: () => ({ meta: [{ title: "Välkommen – STOCKED" }, { name: "description", content: "STOCKED hjälper mig hålla koll på matvaror, bäst före-datum och inköp." }, { property: "og:title", content: "Välkommen – STOCKED" }, { property: "og:description", content: "STOCKED hjälper mig hålla koll på matvaror, bäst före-datum och inköp." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary" }] }),
   component: Welcome,
 });
 
 const slides = [
-  { h: "Välkommen till STOCKED", p: "Håll koll på allt i kyl, frys och skafferi – på ett ställe." },
-  { h: "Scanna och spara", p: "Scanna streckkoden, kontrollera datumet och välj plats. Klart." },
-  { h: "Slösa mindre", p: "Få en påminnelse ett dygn innan något går ut, och recept på det du har." },
+  { h: "Välkommen till STOCKED", p: "Jag har koll på allt i kyl, frys och skafferi – på ett ställe." },
+  { h: "Scanna och spara", p: "Jag scannar streckkoden, kontrollerar datumet och väljer plats. Klart." },
+  { h: "Slösa mindre", p: "Jag får en påminnelse ett dygn innan något går ut, och recept på det jag har." },
 ];
 
 function Welcome() {

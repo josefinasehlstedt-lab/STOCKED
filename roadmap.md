@@ -1,9 +1,16 @@
 # Roadmap
 
 ## Öppen
-- [ ] Notisen "Mjölk går ut imorgon" lägger sig ovanpå sidhuvudet och döljer loggan och ikonerna – flytta ner den (väntar på Josefs godkännande)
+- [ ] De sista befälstexterna (Lägg till vara, Sök, Rikta kameran, Ställ en fråga) är kvar i du-form – väntar på Josefs besked
 
 ## Klar
-- [x] Namnsteget borttaget – introt leder direkt till Hem, hälsningen är "Hej," och namnskissen borta från wireframes
-- [x] Wireframes-sida med alla 10 skärmar i gråskiss (/wireframes)
-- [x] STOCKED-loggan större i sidhuvudet (24 px → 36 px höjd)
+- [x] Hem-sidan: "Hej," borttaget, rubriken är bara "Min översikt"
+- [x] All text ur "mitt" perspektiv: min översikt, Mina förråd, Jag har hemma, mina varor
+- [x] "Köpt" borttagen som kategori i Inköpslista – bockad vara försvinner ur listan
+- [x] Notisen "Mjölk går ut imorgon" flyttad under sidhuvudet
+- [x] Rubriken på köks-sidan heter "Mitt kök"
+- [x] Loggan 22 px, vänsterställd i linje med texten
+- [x] Namnsteget borttaget – introt leder direkt till Hem, hälsningen är "Hej,"
+- [x] Wireframes-sida med alla skärmar i gråskiss (/wireframes)
+- [x] Formulärfältens kanter mörkare så de syns (kontrasttest tillagt)
+- [x] Skärmbilder på alla nio steg tagna om efter textändringarna

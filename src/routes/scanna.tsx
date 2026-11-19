@@ -36,7 +36,7 @@ function Scanna() {
         const stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } });
         streamRef.current = stream;
         if (video.current) { video.current.srcObject = stream; await video.current.play(); }
-        if (!BD) { setStatus("Din webbläsare kan inte läsa streckkoder automatiskt. Skriv in numret nedan."); return; }
+        if (!BD) { setStatus("Min webbläsare kan inte läsa streckkoder automatiskt. Skriv in numret nedan."); return; }
         const det = new BD({ formats: ["ean_13", "ean_8", "upc_a", "upc_e"] });
         while (!stop) {
           const r = video.current ? await det.detect(video.current).catch(() => []) : [];

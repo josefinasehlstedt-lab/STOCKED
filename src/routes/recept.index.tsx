@@ -6,7 +6,7 @@ import { categories, hasAt, recipes } from "@/lib/recipes";
 import { useStore } from "@/lib/store";
 
 export const Route = createFileRoute("/recept/")({
-  head: () => ({ meta: [{ title: "Recept – STOCKED" }, { name: "description", content: "Receptförslag utifrån det du redan har hemma." }, { property: "og:title", content: "Recept – STOCKED" }, { property: "og:description", content: "Receptförslag utifrån det du redan har hemma." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary" }] }),
+  head: () => ({ meta: [{ title: "Recept – STOCKED" }, { name: "description", content: "Receptförslag utifrån det jag redan har hemma." }, { property: "og:title", content: "Recept – STOCKED" }, { property: "og:description", content: "Receptförslag utifrån det jag redan har hemma." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary" }] }),
   component: Recept,
 });
 const icons: Record<string, typeof Leaf> = { Alla: UtensilsCrossed, Vardag: Soup, Vegetariskt: Leaf, Fisk: Fish, Frukost: Coffee };
@@ -38,7 +38,7 @@ function Recept() {
               <p className="mt-2 flex flex-wrap items-center gap-2 text-sm text-muted-foreground"><Chip>{have}/{r.ingredients.length} hemma</Chip><Clock className="size-4" aria-hidden />{r.time}</p></div>
             <ChevronRight className="size-5" aria-hidden /></Link></li>
         ))}
-        {!list.length && <li className="text-muted-foreground">Inga recept matchar din sökning.</li>}
+        {!list.length && <li className="text-muted-foreground">Inga recept matchar min sökning.</li>}
       </ul>
     </AppShell>
   );

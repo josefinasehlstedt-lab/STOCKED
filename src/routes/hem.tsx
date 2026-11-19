@@ -17,13 +17,13 @@ function Hem() {
   const soon = s.items.filter((i) => daysLeft(i.expires) <= 3);
   return (
     <AppShell>
-      <h1 className="mt-2 text-2xl font-bold leading-snug">Hej,<br /><span className="font-medium text-muted-foreground">här är din översikt</span></h1>
+      <h1 className="mt-2 text-2xl font-bold leading-snug">Min översikt</h1>
       <Link to="/kok" className="mt-6 flex items-center gap-4 rounded-2xl bg-secondary p-5 text-secondary-foreground">
         <AlarmClock className="size-6 shrink-0" aria-hidden />
         <span className="flex-1"><span className="block font-bold">Ät först</span><span className="text-sm">{soon.length} {soon.length === 1 ? "vara behöver" : "varor behöver"} användas snart</span></span>
         <ChevronRight className="size-5" aria-hidden />
       </Link>
-      <h2 className="mt-8 mb-3 text-base font-semibold">Dina förråd</h2>
+      <h2 className="mt-8 mb-3 text-base font-semibold">Mina förråd</h2>
       <ul className="space-y-3">
         {places.map(({ v, label, Icon }) => {
           const n = s.items.filter((i) => i.place === v).length;
