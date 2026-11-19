@@ -44,7 +44,7 @@ function Kok() {
     );
   };
   return (
-    <AppShell title="Ditt kök">
+    <AppShell title="Mitt kök">
       <nav aria-label="Filtrera plats" className="-mx-5 mb-6 flex gap-2 overflow-x-auto px-5">
         {tabs.map(({ v, label, Icon }) => (
           <Link key={label} to="/kok" search={{ plats: v }} aria-current={plats === v ? "page" : undefined}

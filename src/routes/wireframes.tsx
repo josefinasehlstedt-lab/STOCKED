@@ -179,7 +179,7 @@ function WKok() {
   const c = isCompact();
   return (
     <div className="flex h-full flex-col">
-      <h3 className="font-serif text-2xl font-semibold text-foreground">Ditt kök</h3>
+      <h3 className="font-serif text-2xl font-semibold text-foreground">Mitt kök</h3>
       <span aria-hidden className="-mx-3 mt-3 flex gap-1.5 overflow-hidden px-3">
         <Pill filled>Alla</Pill><Pill>Kyl</Pill><Pill>Frys</Pill><Pill>Skafferi</Pill>
       </span>
