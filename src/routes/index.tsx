@@ -1,7 +1,7 @@
-import { createFileRoute, Navigate, useNavigate } from "@tanstack/react-router";
+import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
 import hero from "@/assets/hero-groceries.jpg";
-import { setState, useStore } from "@/lib/store";
+import { setState } from "@/lib/store";
 
 export const Route = createFileRoute("/")({
   head: () => ({ meta: [{ title: "Välkommen – STOCKED" }, { name: "description", content: "STOCKED hjälper mig hålla koll på matvaror, bäst före-datum och inköp." }, { property: "og:title", content: "Välkommen – STOCKED" }, { property: "og:description", content: "STOCKED hjälper mig hålla koll på matvaror, bäst före-datum och inköp." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary" }] }),
@@ -11,14 +11,12 @@ export const Route = createFileRoute("/")({
 const slides = [
   { h: "Välkommen till STOCKED", p: "Jag har koll på allt i kyl, frys och skafferi – på ett ställe." },
   { h: "Scanna och spara", p: "Jag scannar streckkoden, kontrollerar datumet och väljer plats. Klart." },
-  { h: "Slösa mindre", p: "Jag får en påminnelse ett dygn innan något går ut, och recept på det jag har." },
+  { h: "Slösa mindre", p: "Jag ser direkt vad som snart går ut, och får recept på det jag har." },
 ];
 
 function Welcome() {
-  const s = useStore();
   const nav = useNavigate();
   const [i, setI] = useState(0);
-  if (s.onboarded) return <Navigate to="/hem" />;
 
   function finish() {
     setState((st) => ({ ...st, onboarded: true }));
