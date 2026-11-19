@@ -20,8 +20,7 @@ function Welcome() {
   const [i, setI] = useState(0);
   if (s.onboarded) return <Navigate to="/hem" />;
 
-  async function finish() {
-    if (typeof Notification !== "undefined" && Notification.permission === "default") { try { await Notification.requestPermission(); } catch {} }
+  function finish() {
     setState((st) => ({ ...st, onboarded: true }));
     nav({ to: "/hem" });
   }

@@ -1,25 +1,10 @@
 import { Link, useRouter } from "@tanstack/react-router";
 import { ArrowLeft, Home, Refrigerator, ScanLine, ChefHat, ListChecks, MessageCircleQuestion } from "lucide-react";
-import { useEffect, type ReactNode } from "react";
-import { toast } from "sonner";
-import { daysLeft, setState, useStore } from "@/lib/store";
+import type { ReactNode } from "react";
 import logo from "@/assets/stocked-logo.png";
 
 export function AppShell({ title, back, children }: { title?: string; back?: boolean; children: ReactNode }) {
   const router = useRouter();
-  const s = useStore();
-
-  // Notify one day before an item expires (once per item)
-  useEffect(() => {
-    const due = s.items.filter((i) => daysLeft(i.expires) === 1 && !s.notified.includes(i.id));
-    if (!due.length) return;
-    due.forEach((i) => {
-      const msg = `${i.name} går ut imorgon`;
-      toast(msg, { description: "Jag använder den gärna idag eller imorgon." });
-      if (typeof Notification !== "undefined" && Notification.permission === "granted") new Notification("STOCKED", { body: msg });
-    });
-    setState((st) => ({ ...st, notified: [...st.notified, ...due.map((d) => d.id)] }));
-  }, [s.items, s.notified]);
 
   return (
     <div className="mx-auto flex min-h-dvh max-w-md flex-col bg-background">

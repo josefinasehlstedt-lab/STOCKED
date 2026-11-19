@@ -3,13 +3,12 @@ import { useSyncExternalStore } from "react";
 export type Place = "kyl" | "frys" | "skafferi";
 export type Item = { id: string; name: string; brand?: string | undefined; place: Place; qty: number; expires: string; barcode?: string | undefined };
 export type ShopItem = { id: string; name: string };
-export type State = { onboarded: boolean; items: Item[]; shop: ShopItem[]; notified: string[] };
+export type State = { onboarded: boolean; items: Item[]; shop: ShopItem[] };
 
 const KEY = "stocked-v1";
 const today = (d: number) => new Date(Date.now() + d * 864e5).toISOString().slice(0, 10);
 const seed: State = {
   onboarded: false,
-  notified: [],
   items: [
     { id: "1", name: "Mjölk", brand: "Arla", place: "kyl", qty: 1, expires: today(1) },
     { id: "2", name: "Ägg", place: "kyl", qty: 6, expires: today(6) },
